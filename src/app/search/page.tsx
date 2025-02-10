@@ -7,9 +7,7 @@ import { Metadata } from 'next'
 import { ButtonCart } from '@/components/button-Cart'
 
 interface SearchProps {
-  searchParams: {
-    q: string
-  }
+  searchParams: Promise<{ q: string }>
 }
 
 export const metadata: Metadata = {
@@ -29,7 +27,7 @@ async function searchProducts(query: string): Promise<Product[]> {
 }
 
 export default async function Search({ searchParams }: SearchProps) {
-  const { q: query } = searchParams
+  const { q: query } = await searchParams
 
   if (!query) {
     redirect('/')
