@@ -26,7 +26,7 @@ export default function MenuCart() {
     <>
       {items.length > 0 ? (
         <div
-          className={`flex justify-evenly z-30  bg-primary  bottom-0 left-0 fixed items-center py-1 gap-3 full  rounded-t-xl px-2 ${items.length > 0 ? 'flex' : 'hidden'}`}
+          className={`flex justify-evenly z-30 w-full bg-primary  bottom-0 left-0 fixed items-center py-1 gap-3 full  rounded-t-xl px-2 ${items.length > 0 ? 'flex' : 'hidden'}`}
         >
           <div className="font-semibold">
             {' '}

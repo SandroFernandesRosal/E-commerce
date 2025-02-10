@@ -66,7 +66,7 @@ export default function CarouselProducts({ products, titleproducts, page }: { pr
               className=" justify-between  flex  flex-col   rounded-md border-[1px]  border-zinc-300"
               key={product.id}
             >
-              <div className="border-b-[3px] border-primary pb-2"> 
+              <div className="border-b-[3px] border-primary  pb-2"> 
                 <Link href={`/${page}/${product.slug}`} className="group">
                 {' '}
                     <Image
@@ -81,12 +81,12 @@ export default function CarouselProducts({ products, titleproducts, page }: { pr
              
               
               
-              <div  className="flex flex-col mb-2 h-full gap-2 mx-2">
+              <div  className="flex flex-col my-2 min-h-[100px] md:min-h-[70px] gap-2 justify-between">
               <Link href={`/${page}/${product.slug}`}>
                 <p className=" text-center px-1">{product.title}</p>
               </Link>
 
-              <div className='flex flex-wrap justify-evenly'> 
+              <div className='flex flex-wrap justify-evenly px-2 gap-2'> 
                 <span className="flex  items-center justify-center rounded-full  text-primary font-bold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',

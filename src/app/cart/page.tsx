@@ -9,14 +9,14 @@ import Link from 'next/link'
 export default function Cart() {
   const { items } = useCart()
   return (
-    <div className="flex flex-col pt-[100px] min-h-screen mx-8 items-center">
+    <div className="flex flex-col  pt-[150px] pb-5 min-h-screen mx-8 items-center">
       <MenuCart />
       <div className="flex flex-wrap gap-4 justify-center w-full">
         {items.map((product) => {
           return (
             <div
               key={product.productId}
-              className="group items-center gap-2 py-2 flex-col rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary shadow shadow-gray-500 dark:shadow-shadowfooterdark flex justify-start w-[47%] max-w-[200px] "
+              className="w-[47%] max-w-[200px] gap-2 pb-2 flex  flex-col pt-2   rounded-md border-[1px] border-zinc-300"
             >
               <Link href={`/product/${product.slug}`}>
                 <Image
@@ -29,9 +29,11 @@ export default function Cart() {
                 />{' '}
               </Link>
 
-              <Link href={`/product/${product.slug}`} className=" ">
+              <div className="flex flex-col mb-2 h-full gap-2 mx-2">
+
+              <Link href={`/product/${product.slug}`} className=" w-full flex ">
                 {' '}
-                <span className="text-sm px-1 text-center flex ">
+                <span className=" text-center  px-1">
                   {product.title}
                 </span>{' '}
               </Link>
@@ -41,8 +43,8 @@ export default function Cart() {
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
                   })}
                 </span>
 
@@ -50,6 +52,7 @@ export default function Cart() {
                   productId={product.productId}
                   quantity={product.quantity}
                 />
+              </div>
               </div>
             </div>
           )
