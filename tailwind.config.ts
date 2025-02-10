@@ -9,10 +9,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#10B981',
-        secondary: '#1fb6ff',
-        bgprimary: '#09090B',
-        bgsecondary: '#18181B',
+        primary: '#65a4b9',
+        secondary:'#f782a0',
+        bgprimary:'#f9f9f9',
+        bgsecondary:'#a3d4da',
+        textsecondary: '#EEEEEE',
+        textprimary: '#262626'
+       
       },
     },
   },
