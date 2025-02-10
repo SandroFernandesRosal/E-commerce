@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
-
 export default function Menu() {
   const { handleMenu, menu, items } = useCart()
   return (
@@ -29,11 +28,11 @@ export default function Menu() {
           menu ? 'translate-x-0 ' : 'translate-x-full'
         }`}
       >
-        <nav className='bg-secondary w-full  justify-center items-center py-2 md:hidden flex gap-2 rounded-l-xl rounded-b-none'> 
-          <FaInstagram className='text-textsecondary hover:text-primary text-xl' />
-          <FaWhatsapp className='text-textsecondary hover:text-primary text-xl' />
+        <nav className="bg-secondary w-full  justify-center items-center py-2 md:hidden flex gap-2 rounded-l-xl rounded-b-none">
+          <FaInstagram className="text-textsecondary hover:text-primary text-xl" />
+          <FaWhatsapp className="text-textsecondary hover:text-primary text-xl" />
         </nav>
-        
+
         <Link
           href="/"
           className="flex items-center gap-2 hover:underline"
@@ -58,19 +57,19 @@ export default function Menu() {
           <span className="text-xl">Cart ({items.length})</span>
         </Link>
 
-        <nav className='border-t-[1px] border-zinc-400 w-full  justify-center items-center py-2 flex   md:hidden'>
-        <ul className='flex flex-col justify-between pt-5 gap-4 text-xl text-textsecondary'>
-          <li className='hover:text-secondary'>
-            <Link href="/home">Início</Link>
-          </li>
-          <li className='hover:text-secondary'>
-            <Link href="/produtos">Produtos</Link>
-          </li>
-          <li className='hover:text-secondary'>
-            <Link href="/contato">Contato</Link>
-          </li>
-        </ul>
-      </nav>
+        <nav className="border-t-[1px] border-zinc-400 w-full  justify-center items-center py-2 flex   md:hidden">
+          <ul className="flex flex-col justify-between pt-5 gap-4 text-xl text-textsecondary">
+            <li className="hover:text-secondary">
+              <Link href="/home">Início</Link>
+            </li>
+            <li className="hover:text-secondary">
+              <Link href="/produtos">Produtos</Link>
+            </li>
+            <li className="hover:text-secondary">
+              <Link href="/contato">Contato</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </>
   )

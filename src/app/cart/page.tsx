@@ -5,7 +5,6 @@ import { useCart } from '@/context/cart-context'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
 export default function Cart() {
   const { items } = useCart()
   return (
@@ -30,29 +29,31 @@ export default function Cart() {
               </Link>
 
               <div className="flex flex-col mb-2 h-full gap-2 mx-2">
+                <Link
+                  href={`/product/${product.slug}`}
+                  className=" w-full flex "
+                >
+                  {' '}
+                  <span className=" text-center  px-1">
+                    {product.title}
+                  </span>{' '}
+                </Link>
 
-              <Link href={`/product/${product.slug}`} className=" w-full flex ">
-                {' '}
-                <span className=" text-center  px-1">
-                  {product.title}
-                </span>{' '}
-              </Link>
+                <div className="flex flex-col  justify-end  h-full gap-2 mx-2 items-center">
+                  <span className="flex  items-center justify-center rounded-full bg-primary px-4 font-semibold">
+                    {product.price.toLocaleString('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL',
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}
+                  </span>
 
-              <div className="flex flex-col  justify-end  h-full gap-2 mx-2 items-center">
-                <span className="flex  items-center justify-center rounded-full bg-primary px-4 font-semibold">
-                  {product.price.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
-                </span>
-
-                <AddOurRemoveToCart
-                  productId={product.productId}
-                  quantity={product.quantity}
-                />
-              </div>
+                  <AddOurRemoveToCart
+                    productId={product.productId}
+                    quantity={product.quantity}
+                  />
+                </div>
               </div>
             </div>
           )

@@ -67,7 +67,6 @@ export default async function ProductPage({ params }: ProductProps) {
             })}
           </span>
         </div>
-        
 
         <AddToCartButton
           productId={product.id}

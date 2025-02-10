@@ -36,7 +36,7 @@ export default function MenuCart() {
             </p>
             <p>Total: R$ {totalPrice}</p>
           </div>
-    
+
           <div className="flex gap-2">
             <button
               onClick={() => {

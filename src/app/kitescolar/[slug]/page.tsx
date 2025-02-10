@@ -67,38 +67,6 @@ export default async function ProductPage({ params }: ProductProps) {
             })}
           </span>
         </div>
-        <div className="mt-8 space-y-4">
-          <span className="block font-semibold">Tamanhos</span>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-bglightsecundary dark:bg-bgdarksecundary text-sm font-semibold "
-            >
-              P
-            </button>
-
-            <button
-              type="button"
-              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-bglightsecundary dark:bg-bgdarksecundary  text-sm font-semibold "
-            >
-              M
-            </button>
-
-            <button
-              type="button"
-              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-bglightsecundary dark:bg-bgdarksecundary  text-sm font-semibold "
-            >
-              G
-            </button>
-
-            <button
-              type="button"
-              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-700 bg-bglightsecundary dark:bg-bgdarksecundary  text-sm font-semibold "
-            >
-              GG
-            </button>
-          </div>
-        </div>
 
         <AddToCartButton
           productId={product.id}
