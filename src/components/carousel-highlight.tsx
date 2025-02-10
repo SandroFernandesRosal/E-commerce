@@ -60,10 +60,10 @@ export default function CarouselHighlight({ products }: { products: Product[] })
         {products.map((product: Product) => {
           return (
             <div
-              className="flex flex-col h-full   overflow-hidden bg-red-500 rounded-lg"
+              className="flex flex-col h-full   overflow-hidden border-[1px] border-zinc-300 p-5 rounded-lg"
               key={product.id}
             >
-              <Link href={`/product/${product.slug}`} className="group  flex justify-center items-center md:h-[400px] bg-bgsecondary ">
+              <Link href={`/product/${product.slug}`} className="group  flex justify-center items-center md:h-[400px] ">
                 {' '}
                 <Image
                   src={product.image}

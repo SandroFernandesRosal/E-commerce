@@ -63,30 +63,36 @@ export default function CarouselProducts({ products, titleproducts, page }: { pr
         {products.map((product: Product) => {
           return (
             <div
-              className="w-[47%]  justify-between  flex  flex-col h-full py-2   rounded-md bg-bgsecondary"
+              className=" justify-between  flex  flex-col   rounded-md border-[1px]  border-zinc-300"
               key={product.id}
             >
-              <Link href={`/${page}/${product.slug}`} className="group h-[50%]">
+              <div className="border-b-[3px] border-primary pb-2"> 
+                <Link href={`/${page}/${product.slug}`} className="group">
                 {' '}
-                <Image
-                  src={product.image}
-                  width={500}
-                  height={500}
-                  alt={product.title}
-                  className="group-hover:scale-105 transition-transform duration-500"
-                />
-              </Link>
+                    <Image
+                      src={product.image}
+                      width={500}
+                      height={500}
+                      alt={product.title}
+                      className="group-hover:scale-105 transition-transform duration-500 "
+                    />
+                </Link>
+              </div>
+             
               
+              
+              <div  className="flex flex-col mb-2 h-full gap-2 mx-2">
               <Link href={`/${page}/${product.slug}`}>
-                <p className=" text-center px-1 font-bold mt-4 truncate">{product.title}</p>
+                <p className=" text-center px-1">{product.title}</p>
               </Link>
-              <div className={`flex flex-col mt-3 h-full md:flex-row justify-end md:items-end  md:justify-evenly gap-2 mx-2 items-center `}>
-                <span className="flex  items-center justify-center rounded-full bg-primary px-4 font-semibold">
+
+              <div className='flex flex-wrap justify-evenly'> 
+                <span className="flex  items-center justify-center rounded-full  text-primary font-bold">
                   {product.price.toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL',
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0,
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
                   })}
                 </span>
                 <ButtonCart
@@ -98,6 +104,7 @@ export default function CarouselProducts({ products, titleproducts, page }: { pr
                   description={product.description}
                   quantity={product.quantity}
                 />
+                </div>
               </div>{' '}
               </div>
             
