@@ -66,9 +66,9 @@ export default function MenuCart() {
               {message}
             </div>
           )}
-          <p className={`${message ? 'hidden' : 'flex'}`}>
+          <h1 className={`${message ? 'hidden' : 'flex'} text-2xl`}>
             Nenhum ítem no carrinho
-          </p>
+          </h1>
         </>
       )}
     </>

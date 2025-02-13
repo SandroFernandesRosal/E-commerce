@@ -29,6 +29,7 @@ interface CartContextType {
   removeFromCart: (productId: number) => void
   removeOneFromCart: (productId: number) => void
   addOneToCart: (productId: number) => void
+  closeMenu: () => void
 }
 
 const CartContext = createContext({} as CartContextType)
@@ -39,6 +40,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const handleMenu = () => {
     setMenu(!menu)
+  }
+
+  const closeMenu = () => {
+    setMenu(false)
   }
 
   function clearCart() {
@@ -135,6 +140,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         removeFromCart,
         handleMenu,
         menu,
+        closeMenu,
         clearCart,
         removeOneFromCart,
         addOneToCart,

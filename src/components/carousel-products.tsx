@@ -8,6 +8,7 @@ import { ButtonCart } from './button-Cart'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Product } from '@/data/types/products'
+import { useCart } from '@/context/cart-context'
 
 export default function CarouselProducts({
   products,
@@ -18,6 +19,8 @@ export default function CarouselProducts({
   titleproducts: string
   page: string
 }) {
+  const { closeMenu } = useCart()
+
   const settings = {
     dots: true,
     infinite: false,
@@ -58,7 +61,10 @@ export default function CarouselProducts({
   }
 
   return (
-    <section className=" text-textprimary flex flex-col  items-center py-4 mb-5 justify-center">
+    <section
+      className=" text-textprimary flex flex-col  items-center py-4 mb-5 justify-center"
+      onClick={() => closeMenu()}
+    >
       <div className="flex gap-2 items-center justify-between px-2 w-[80vw]">
         <h1 className="md:text-3xl w-full font-bold">{titleproducts}</h1>
         <Link

@@ -4,8 +4,11 @@ import { TbTruckDelivery } from 'react-icons/tb'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { useCart } from '@/context/cart-context'
 
 export default function Benefits() {
+  const { closeMenu } = useCart()
+
   const settings = {
     dots: true,
     infinite: false,
@@ -46,10 +49,13 @@ export default function Benefits() {
   }
 
   return (
-    <section className="bg-zinc-300 text-textprimary flex  items-center py-4 my-10 justify-center">
+    <section
+      className="bg-zinc-300 text-textprimary flex  items-center py-4 my-10 justify-center"
+      onClick={() => closeMenu()}
+    >
       <Slider {...settings} className="w-[80vw] my-5">
-        <div className="flex gap-2 items-center   place-items-center  ">
-          <div className="border-[2px] w-22 h-22  flex justify-center items-center  rounded-full border-zinc-700">
+        <div className="flex gap-2 items-center  place-items-center">
+          <div className="border-[2px] w-20 h-20  flex justify-center items-center  rounded-full border-zinc-700">
             <TbTruckDelivery className="text-6xl p-1" />
           </div>
           <div className="flex flex-col">
@@ -58,7 +64,7 @@ export default function Benefits() {
           </div>
         </div>
         <div className="flex gap-2 items-center   place-items-center ">
-          <div className="border-[2px] w-22 h-22 flex justify-center items-center  rounded-full border-zinc-700">
+          <div className="border-[2px] w-20 h-20 flex justify-center items-center  rounded-full border-zinc-700">
             <FaRegCreditCard className="text-6xl p-3" />
           </div>
           <div className="flex flex-col">
@@ -67,7 +73,7 @@ export default function Benefits() {
           </div>
         </div>
         <div className="flex gap-2 items-center   place-items-center ">
-          <div className="border-[2px] w-22 h-22 flex justify-center items-center rounded-full border-zinc-700">
+          <div className="border-[2px] w-20 h-20 flex justify-center items-center rounded-full border-zinc-700">
             <FaPercent className="text-6xl p-3" />
           </div>
           <div className="flex flex-col">
@@ -77,7 +83,7 @@ export default function Benefits() {
         </div>
 
         <div className="flex gap-2 items-center   place-items-center ">
-          <div className="border-[2px] w-22 h-22 flex justify-center items-center rounded-full border-zinc-700">
+          <div className="border-[2px] w-20 h-20 flex justify-center items-center rounded-full border-zinc-700">
             <FaWhatsapp className="text-6xl p-3" />
           </div>
           <div className="flex flex-col">

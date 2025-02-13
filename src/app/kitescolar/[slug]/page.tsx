@@ -36,7 +36,7 @@ export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(slug)
 
   return (
-    <div className="relative lg:grid  lg:grid-cols-3 gap-4 flex md:items-center flex-col pt-[100px] overflow-hidden">
+    <div className="relative lg:grid  lg:grid-cols-3 gap-4 flex md:items-center flex-col pt-[100px] pb-5 overflow-hidden">
       <div className="lg:col-span-2 overflow-hidden">
         <Image
           src={product.image}

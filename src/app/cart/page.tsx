@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default function Cart() {
   const { items } = useCart()
   return (
-    <div className="flex flex-col  pt-[150px] pb-5 min-h-screen mx-8 items-center">
+    <div className="flex flex-col  pt-[150px] md:pt-[180px] pb-5 min-h-screen mx-8 items-center">
       <MenuCart />
       <div className="flex flex-wrap gap-4 justify-center w-full">
         {items.map((product) => {
@@ -17,16 +17,18 @@ export default function Cart() {
               key={product.productId}
               className="w-[47%] max-w-[200px] gap-2 pb-2 flex  flex-col pt-2   rounded-md border-[1px] border-zinc-300"
             >
-              <Link href={`/product/${product.slug}`}>
-                <Image
-                  src={product.image}
-                  className="group-hover:scale-105 transition-transform duration-500"
-                  width={480}
-                  height={480}
-                  alt=""
-                  quality={100}
-                />{' '}
-              </Link>
+              <div className="border-b-[3px] border-primary  pb-2">
+                <Link href={`/product/${product.slug}`} className="group">
+                  {' '}
+                  <Image
+                    src={product.image}
+                    width={500}
+                    height={500}
+                    alt={product.title}
+                    className="group-hover:scale-105 transition-transform duration-500 "
+                  />
+                </Link>
+              </div>
 
               <div className="flex flex-col mb-2 h-full gap-2 mx-2">
                 <Link
@@ -34,7 +36,7 @@ export default function Cart() {
                   className=" w-full flex "
                 >
                   {' '}
-                  <span className=" text-center  px-1">
+                  <span className=" text-center  px-1 w-full">
                     {product.title}
                   </span>{' '}
                 </Link>

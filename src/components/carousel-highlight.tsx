@@ -7,12 +7,14 @@ import 'slick-carousel/slick/slick-theme.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Product } from '@/data/types/products'
+import { useCart } from '@/context/cart-context'
 
 export default function CarouselHighlight({
   products,
 }: {
   products: Product[]
 }) {
+  const { closeMenu } = useCart()
   const settings = {
     dots: true,
     infinite: true,
@@ -53,7 +55,10 @@ export default function CarouselHighlight({
   }
 
   return (
-    <section className="highligt text-textprimary flex flex-col  items-center py-4 mb-5 justify-center w-full my-5">
+    <section
+      className="highligt text-textprimary flex flex-col  items-center py-4 mb-5 justify-center w-full my-5"
+      onClick={() => closeMenu()}
+    >
       <div className="flex w-full  gap-3 justify-center">
         <Slider {...settings} className="w-[80%]">
           {products.map((product: Product) => {
